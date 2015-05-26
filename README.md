@@ -57,10 +57,50 @@ This repo will help us get started contributing to p5 at the p5 contributor's co
     - Tests live in "test/unit/<unit_name>" and are linked via "[test/test.html](https://github.com/processing/p5.js/blob/master/test/test.html)" 
     - [More info on Testing with p5.js](https://github.com/processing/p5.js/wiki/Development#testing)
   6. Document Changes (optional)
-    - Documentation is generated automatically from inline comments when you run ``grunt`` or ``grunt yui``
+    - Documentation is generated automatically from inline comments when you run ``grunt yui``
     - [p5.js Inline Documentation guide](https://github.com/processing/p5.js/wiki/Inline-documentation)
-    - example: ellipse() [src](https://github.com/processing/p5.js/blob/master/src/shape/2d_primitives.js#L112) / [doc](http://p5js.org/reference/#/p5/ellipse)
+    - [DocBlockr](https://github.com/spadgos/sublime-jsdocs) is a Sublime Text package to help auto-format your inline docs.
+    - Example: ellipse() [src](https://github.com/processing/p5.js/blob/master/src/shape/2d_primitives.js#L112) / [doc](http://p5js.org/reference/#/p5/ellipse)
     - To view your changes, clone the [p5.js-website repo](https://github.com/processing/p5.js-website) and replace the [reference/data.json](https://github.com/processing/p5.js-website/blob/master/reference/data.json) file with the new file from your p5.js repo. ***Note: The p5.js website needs a PHP server in order to run.
+  7. Commit Your Changes
+    - ``git add <files you want to include>``
+    - ``git commit -m <your short commit message>``
+    - Commit messages should explain what change(s) you made in the imperitive tense, i.e. "fix bug with ellipse"
+    - If you have a messy commit history, you can use [git rebase](https://help.github.com/articles/about-git-rebase/) to tidy up before sending the pull request.
+  8. Locally Merge (or rebase) Upstream Changes
+    -  ``git pull upstream master`` --> merge your changes with upstream changes
+    -  Or, ``git pull --rebase upstream master`` --> applies your changes ontop of the upstream changes
+  9. Push To Your Fork
+    - `` git push origin <topic-branch-name>``
+  10. Open Pull Request
+    - [GitHub info on Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
+    - Clear description of changes, clear title, imperative tense (i.e. "fix bug")
+  11. Discuss & Amend Pull Request
+    - Pull Requests can be discussed, just like issues [example](https://github.com/processing/p5.js/pull/454)
+    - Pull Requests are not static snapshots of your repo. They update whenever you add more commits to the branch, until the PR is accepted.
 
-Addendum:
-- Resolving Merge Conflicts
+# Useful Git Commands
+- ``git remote -v`` List all your remotes "verbosely"
+- ``git pull <name_of_the_remote> <branch_name>``
+- ``git push <name_of_the_remote> <branch_name>``
+- ``git checkout -b <topic-branch-name>`` Create a new branch and check it out
+- ``git stash``   Stash all uncommitted changes you’ve made to the branch. You can get them back later.
+- ``git log``    Show commit history.
+- ``git status``    Show branch and pending changes.
+- ``git diff``   View merge conflicts
+- ``git grep "something()"`` Search for things in your working directory.
+- ``git commit --amend`` Amend your previous commit rather than creating a new commit
+
+
+# Addendum:
+## Resolving Merge Conflicts:
+- Conflicts occur when branches have conflicting modifications that cannot be automatically resolved/merged. When you try to merge (i.e. pull upstream changes), if there are conflicts, git tells you and adds this stuff to your file:
+```
+<<<<<<< HEAD
+
+Here is what you had locally
+=======
+Here is what was in the thing you tried to merge
+>>>>>>> 59685c301d09b58fdac23d616
+```
+You can fix manually by picking which one you want and getting rid of all this: <<<<<< HEAD ======= >>>>> 583….

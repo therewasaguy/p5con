@@ -33,7 +33,7 @@ This repo will help us get started contributing to p5 at the p5 contributor's co
     - Grunt CLI: ``npm install -g grunt-cli``
   1. **Fork, Clone, Configure Remotes, Install Dependencies**
     - Fork https://github.com/processing/p5.js to your github account.
-    - Clone your fork of the repo from Terminal: ``git clone https://github.com/<your-username>/p5.js``
+    - Clone your fork of the repo from Terminal: ``git clone --depth=50 https://github.com/<your-username>/p5.js``
     - Navigate to the newly cloned directory: ``cd p5.js``
     - Add a reference to the original repo as a remote called "upstream":
         ``git remote add upstream https://github.com/processing/p5.js``

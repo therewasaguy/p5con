@@ -1,9 +1,6 @@
 # Contributing to p5.js
 This repo will help us get started contributing to p5 at the p5 contributor's conference!
 
-# Attendees
-- Jason Sigal @[therewasaguy](http://github.com/therewasaguy)
-
 # T.O.C.
 ## Open Source
   - Brief History of Open Source

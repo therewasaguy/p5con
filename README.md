@@ -106,6 +106,6 @@ You can fix manually by picking which one you want and getting rid of all this: 
 
 Then,
 ```
-git add <files>
+git add <files that had merge conflicts>
 git commit -m 'merge upstream changes' 
 ```

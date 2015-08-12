@@ -103,3 +103,9 @@ Here is what was in the thing you tried to merge
 >>>>>>> 59685c301d09b58fdac23d616
 ```
 You can fix manually by picking which one you want and getting rid of all this: <<<<<< HEAD ======= >>>>> 583….
+
+Then,
+```
+git add <files>
+git commit -m 'merge upstream changes' 
+```
